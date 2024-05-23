@@ -113,10 +113,30 @@ export const typeDefs = `#graphql
   Mutation operations for modifying data in the system.
   """
   type Mutation {
+    addProduct(product: AddProductInput): Product
+    updateProduct(id: ID!, edits: EditProductInput): Product
+    deleteProduct(id: ID!): [Product]
     addCustomer(customer: AddCustomerInput): Customer               # Add a new customer in the system
     deleteCustomer(id: ID!): [Customer]                             # Delete a customer by its ID
     updateCustomer(id: ID!, edits: EditCustomerInput!): Customer    # Update a customer by its ID
   }
+
+  input AddProductInput {   
+    product_name: String!   # Required to input product name of the product
+    description: String!    # Required to input description of the product
+    category: String!       # Required to input category ID of the product
+    price: Float!           # Required to input price of the product
+    stock: Int!             # Required to input stock of the product
+  }
+
+  input EditProductInput {
+    product_name: String        # Can modify product name of the customer
+    description: String         # Can modify description of the customer
+    category: String            # Can modify category ID of the customer
+    price: Int                  # Can modify price of the customer
+    stock: Int                  # Can modify stock of the customer
+  }
+
   input AddCustomerInput {
     first_name: String!       # Required to input first name of the customer
     last_name: String!        # Required to input last name of the customer

@@ -1,3 +1,4 @@
+
 const customers = [
   {
     id: "1",
@@ -326,55 +327,68 @@ const categories = [
   },
   {
     id: "3",
-    category_name: "Home & Kitchen"
+    category_name: "Home & Kitchen",
+    products: ['3'],
   },
   {
     id: "4",
-    category_name: "Beauty & Personal Care"
+    category_name: "Beauty & Personal Care",
+    products: ['4']
   },
   {
     id: "5",
-    category_name: "Sports & Outdoors"
+    category_name: "Sports & Outdoors",
+    products: ['5']
   },
   {
     id: "6",
-    category_name: "Toys & Games"
+    category_name: "Toys & Games",
+    products: ['6']
   },
   {
     id: "7",
-    category_name: "Books"
+    category_name: "Books",
+    products: ['7']
   },
   {
     id: "8",
-    category_name: "Automotive"
+    category_name: "Automotive",
+    products: ['8']
   },
   {
     id: "9",
-    category_name: "Health & Wellness"
+    category_name: "Health & Wellness",
+    products: ['9']
   },
   {
     id: "10",
-    category_name: "Grocery & Gourmet Food"
+    category_name: "Grocery & Gourmet Food",
+    products: ['10']
   },
   {
     id: "11",
-    category_name: "Office Supplies"
+    category_name: "Office Supplies",
+    products: ['11']
   },
   {
     id: "12",
-    category_name: "Garden & Outdoor"
+    category_name: "Garden & Outdoor",
+    products: ['12']
   },
   {
     id: "13",
-    category_name: "Pet Supplies"
+    category_name: "Pet Supplies",
+    products: ['13']
   },
   {
     id: "14",
-    category_name: "Baby Products"
+    category_name: "Baby Products",
+    products: ['14']
   },
   {
     id: "15",
-    category_name: "Musical Instruments"
+    category_name: "Musical Instruments",
+    products: ['15']
   }
 ];
 

@@ -227,7 +227,59 @@ const resolvers = {
       // Returns the customer that is updated
       return db.customers.find((customer) => customer.id === args.id);
 
-    }
+    },
+    // Products
+    /**
+     * Add a new prodcut to the system.
+     * @param {Object} parent - The parent object.
+     * @param {Object} args - Arguments passed to the mutation.
+     * @returns {Object} Newly added product object.
+     */
+    addProduct(_, args) {
+      let product = {
+        ...args.product,
+        id: generateRandomID() // Generate Random ID
+      }
+
+      // Add new Product data 
+      db.products.push(product);
+
+      // Return New Product
+      return product;
+    },
+     /**
+     * Delete a product from the system.
+     * @param {Object} parent - The parent object.
+     * @param {Object} args - Arguments passed to the mutation.
+     * @returns {Array} Updated array of product objects after deletion.
+     */
+     deleteProduct(_, args) {
+      db.products = db.products.filter((product) => product.id !== args.id);
+
+      return db.products;
+    },
+    /**
+     * Update details of an existing product in the system.
+     * @param {Object} parent - The parent object.
+     * @param {Object} args - Arguments passed to the mutation.
+     * @returns {Object} Updated product object.
+     */
+    updateProduct(_, args) {
+      db.products = db.products.map((product) => {
+        if(product.id === args.id) {
+
+          // Override/Overwrite the product data
+          return {...product, ...args.edits}
+        }
+        
+        // Return default product
+        return product;
+      })
+
+      // Returns the product that is updated
+      return db.products.find((product) => product.id === args.id);
+
+    },
   }
 }
 
