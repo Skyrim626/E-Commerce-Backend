@@ -53,7 +53,8 @@ const resolvers = {
      * @returns {Object} Customer object matching the provided ID.
      */
     customer(_, args) {
-      return db.categories.find((customer) => customer.id === args.id)
+      console.log(db.customers.find((customer) => customer.id === args.id))
+      return db.customers.find((customer) => customer.id === args.id)
     },
 
     /**
